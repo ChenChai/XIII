@@ -9,7 +9,7 @@
     <body>
         <div class="container">
             <p id="welcome"></p>
-            <h1>WELCOME TO BLOCKMAIL</h1>
+
             <h1>Login</h1>
 
 
