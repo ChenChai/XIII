@@ -6,13 +6,13 @@
     $connection->query("SELECT * FROM blocks");
 
     $emails = json_decode(exec("python ../chain/getmail.py $userid"), true);
-    var_dump($emails);
+    //var_dump($emails);
 
-
-/*    foreach($emails as $name => $object) {
-        echo "Name: ".$name."   Object: ".()."<br/><br/>";
+    foreach($emails["msg"] as $email) {
+        echo "Subject: ".$email["sub"]."<br/>";
+        echo "Message: ".$email["msg"]."<br/>";
+        echo "<br/>";
     }
-*/
 ?>
 
 <head>
