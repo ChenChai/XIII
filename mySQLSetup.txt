@@ -6,6 +6,12 @@ CREATE TABLE blocks (
     block LONGTEXT
 );
 
+CREATE TABLE users (
+    username varchar(255) UNIQUE,
+    password varchar(255)
+)
+
+
 CREATE USER 'guest'@'localhost' IDENTIFIED BY 'password';
 GRANT SELECT ON emaildb.blocks TO 'guest'@'localhost';
 GRANT DELETE ON emaildb.blocks TO 'guest'@'localhost';
