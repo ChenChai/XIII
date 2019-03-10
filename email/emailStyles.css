@@ -41,6 +41,7 @@ body {
     display: flex;
     flex-flow: column wrap;
     overflow-y: scroll;
+    max-height: 100%;
 }
 
 .inbox > div {
