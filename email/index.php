@@ -13,12 +13,12 @@
     while($row = $result->fetch_assoc()) {
         $userid = $row["userid"];
     }
-    
+
+    echo "Your UserID is : ". $userid;
     $connection->query("SELECT * FROM blocks");
 
     $emails = json_decode(exec("python ../chain/getmail.py $userid"), true);
     //var_dump($emails);
-
 ?>
 
 <head>
@@ -41,7 +41,7 @@
                 ?>
 
             </div>
-           <div class="to">
+            <div class="to">
 				To: <input/>
 				<br/>Subject: <input/>
 			</div>
