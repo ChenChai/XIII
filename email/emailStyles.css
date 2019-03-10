@@ -67,6 +67,7 @@ body {
 
 .message {
     grid-column: 2/3;
+    grid-row: 3/4;
     height: 500px;
     width: auto;
     border: 2px solid black;
@@ -78,6 +79,7 @@ body {
 
 .send {
     grid-column: 2/3;
+    grid-row: 4/5;
     width: 5em;
     font-size: 110%;
     justify-self: end;
