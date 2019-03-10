@@ -29,8 +29,8 @@
         <div class="grid">
             <div class="header">Your Email</div>
 
-            <div class="inbox">Inbox:
-
+            <div class="inbox">
+                Inbox:
                 <?php
                     foreach($emails["msg"] as $email) {
                         echo '<div class="message">';
