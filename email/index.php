@@ -47,8 +47,8 @@
 				<br/>Subject: <input type="text" name="subject"/>
             </div>
             <input type="hidden" name="senderid" value=<?php echo '"'.$userid.'"'; ?> />
-            <input type="text" name="message" class="message"/>
-            <input type="submit" class="send" value="Send"/>
+            <div class="message"><input type="text" name="message"/></div>
+            <div class="send"><input type="submit" value="Send"/></div>
             </form>
         </div>
 		<div class="inboxPopup">
