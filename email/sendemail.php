@@ -1,8 +1,8 @@
 <?php
     include "../database/connectdb.php";
-    $id = "test";
+    $id = 1;
     $block = "hi";
-    if (true === $connection->query("INSERT INTO blocks VALUES($id, $block)")) {
+    if (true === $connection->query("INSERT INTO blocks (id, block) VALUES($id, '$block')")) {
         echo "Block created!";
     } else {
         echo "Failed to write block!";
