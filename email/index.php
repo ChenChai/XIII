@@ -47,7 +47,7 @@
 				<br/>Subject: <input type="text" name="subject"/>
             </div>
             <input type="hidden" name="senderid" value=<?php echo '"'.$userid.'"'; ?> />
-            <textarea class="message"><input type="text" name="message"/></textarea>
+            <input class="message"><input type="text" name="message"/>
             <div class="send"><input type="submit" value="Send"/></div>
             </form>
         </div>
