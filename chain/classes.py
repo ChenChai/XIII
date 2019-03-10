@@ -12,6 +12,9 @@ class Email():
 		return Email(s,n)
 	def __repr__(self):
 		return "sub:"+self.subject+"@msg:"+self.message
+	def toDict(self):
+		return {"sub":self.subject,"msg":self.message}
+
 
 class Header():
 	def __init__(self,id,nounce,hash):
