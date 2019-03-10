@@ -8,7 +8,10 @@
 }
 
 .grid > div {
-    border: 3px solid black;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 3px;
 }
 
 .inbox {
@@ -22,4 +25,11 @@
 
 .message {
     grid-column: 2/3;
+    height: 500px;
+    width: auto;
+    border: 2px solid black;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 3px;
 }
