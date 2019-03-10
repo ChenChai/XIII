@@ -16,10 +16,10 @@
         <h1>Login</h1>
         
         
-        <form id="login" action="./login">
+        <form id="login" action="./login/index.php" method="post">
             UserName: <br/><input type="text" name="userName" id="userName"/><br/><br/>
             Password: <br/><input type="text" name="password" id="password"/><br/><br/>
-            <input type="button" id="enter" value="Submit" onclick="createVariables();"/>
+            <input type="submit" id="enter" value="Submit" onclick="createVariables();"/>
 
         </form>
     </div>
