@@ -29,12 +29,13 @@
         <div class="grid">
             <div class="header">Your Email</div>
 
-            <div class="inbox">Inbox:
-
+            <div class="inbox">
+                Inbox:
                 <?php
                     foreach($emails["msg"] as $email) {
                         echo '<div class="message">';
-                        echo '<p class="subject">'.$email["sub"]."</p>";
+                        echo '<h3 class="subject">'.$email["sub"]."</p>";
+                        echo '<p class="subject">'.$email["msg"]."</p>";
                         echo '</div>';
                     }
                 ?>
@@ -45,9 +46,9 @@
 				To: <input type="text" name="userid"/>
 				<br/>Subject: <input type="text" name="subject"/>
             </div>
-            <input type="hiddent" name="senderid" value=<?php echo '"'.$userid.'"'; ?> />
-            <input type="text" name="message" class="message"/>
-            <input type="submit" class="send" value="Send"/>
+            <input type="hidden" name="senderid" value=<?php echo '"'.$userid.'"'; ?> />
+            <input type="text" class="message"name="message"/>
+            <div class="send"><input type="submit" value="Send"/></div>
             </form>
         </div>
 		<div class="inboxPopup">
