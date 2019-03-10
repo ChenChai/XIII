@@ -1,5 +1,20 @@
 ﻿<!DOCTYPE html>
 
+<?php
+    include "../database/connectdb.php";
+    $userid = "1";
+    $connection->query("SELECT * FROM blocks");
+
+    $emails = json_decode(exec("python ../chain/getmail.py $userid"), true);
+    var_dump($emails);
+
+
+/*    foreach($emails as $name => $object) {
+        echo "Name: ".$name."   Object: ".()."<br/><br/>";
+    }
+*/
+?>
+
 <head>
     <title>email</title>
     <link rel="stylesheet" type="text/css" href="emailStyles.css"/>
