@@ -10,6 +10,8 @@ class Email():
 	def deserialize(ser):
 		s,n=map(b64.b64decode,ser.split("@"))
 		return Email(s,n)
+	def __repr__(self):
+		return "sub:"+self.subject+"@msg:"+self.message
 
 class Header():
 	def __init__(self,id,nounce,hash):
@@ -22,6 +24,9 @@ class Header():
 	def deserialize(ser):
 		i,n,h=map(b64.b64decode,ser.split("@"))
 		return Header(int(i),n,h)
+		
+	def __repr__(self):
+		return "header:"+str(self.id)
 
 
 class Transaction():
