@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
-    if (session_status() === PHP_SESSION_ACTIVE) {
-        echo "No need to login. Welcome," . $_SESSION["username"];
-    }
-?>
-
-
 <head>
     <title>LOGIN</title>
     <script src="script.js"></script>
@@ -24,7 +17,6 @@
                 UserName: <br /><input type="text" name="userName" id="userName" /><br /><br />
                 Password: <br /><input type="text" name="password" id="password" /><br /><br />
                 <input type="submit" id="enter" value="Submit" />
-
             </form>
 
             <div class="footer"><br />Created by Edwin, Joshua and Chen.</div>

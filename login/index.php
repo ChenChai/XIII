@@ -1,17 +1,16 @@
 <?php
     function loginSession($username) { 
-        if (session_status() === PHP_SESSION_ACTIVE) {
-            session_destroy();
-        }
-        session_start();
-        $_SESSION["username"] = $username;
-
+        $loggedIn = true;
+        echo "LOGGED IN!";
+        echo '<form id="myForm" action="../email/index.php" method="post">';
+        echo '<input type="text" name="username" value="'.$username.'"/>';
+        echo '</form>';
     }
-
 
     include '../database/connectdb.php';
     $username = $_POST["userName"];
     $password = $_POST["password"];
+    $loggedIn = false;
 
     $hashed = password_hash($password, PASSWORD_DEFAULT, array());
     $result = $connection->query("SELECT * FROM users WHERE username='$username'"); // get username
@@ -47,3 +46,7 @@
         break;
     }
 ?>
+
+<script type="text/javascript">
+    document.getElementById("myForm").submit();
+</script>
