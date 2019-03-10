@@ -4,7 +4,7 @@
 <head>
     <title>DATING LOGIN</title>
     <script src="script.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css"
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 
 <body>
@@ -17,8 +17,8 @@
         
         
         <form id="login" action="./login">
-            UserName: </br><input type="text" name="userName" id="userName"/></br></br>
-            Password: </br><input type="text" name="password" id="password"/></br></br>
+            UserName: <br/><input type="text" name="userName" id="userName"/><br/><br/>
+            Password: <br/><input type="text" name="password" id="password"/><br/><br/>
             <input type="button" id="enter" value="Submit" onclick="createVariables();"/>
 
         </form>
