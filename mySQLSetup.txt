@@ -1,0 +1,20 @@
+CREATE DATABASE emaildb;
+
+CREATE TABLE blocks (
+    count INT AUTO_INCREMENT_PRIMARY KEY,
+    id INT,
+    block LONGTEXT
+);
+
+CREATE TABLE users (
+    username varchar(255) UNIQUE,
+    password varchar(255)
+)
+
+
+CREATE USER 'guest'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT ON emaildb.blocks TO 'guest'@'localhost';
+GRANT DELETE ON emaildb.blocks TO 'guest'@'localhost';
+
+GRANT SELECT ON emaildb.users TO 'guest'@'localhost';
+GRANT INSERT ON emaildb.users TO 'guest'@'localhost';
