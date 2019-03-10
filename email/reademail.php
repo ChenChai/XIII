@@ -1,8 +1,9 @@
 <?php
     include "../database/connectdb.php";
-    $result = $connection->query("SELECT * FROM blocks");
 
-    while($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["id"] . " -- Block: " . $row["block"] . "<br/><br/>";
-    }
+    // get requested id
+    $id = $_POST["id"];
+
+    $result = $connection->query("SELECT * FROM blocks where id='$id'");
+    echo $result["block"];
 ?>
