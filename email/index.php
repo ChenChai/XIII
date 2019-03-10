@@ -34,7 +34,8 @@
                 <?php
                     foreach($emails["msg"] as $email) {
                         echo '<div class="message">';
-                        echo '<p class="subject">'.$email["sub"]."</p>";
+                        echo '<h3 class="subject">'.$email["sub"]."</p>";
+                        echo '<p class="subject">'.$email["msg"]."</p>";
                         echo '</div>';
                     }
                 ?>

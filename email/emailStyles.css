@@ -39,7 +39,7 @@ body {
     grid-row: 2/4;
 
     display: flex;
-    flex-flow: flex wrap;
+    flex-flow: column wrap;
     overflow-y: scroll;
 }
 
