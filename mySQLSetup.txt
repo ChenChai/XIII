@@ -8,8 +8,9 @@ CREATE TABLE blocks (
 
 CREATE TABLE users (
     username varchar(255) UNIQUE,
-    password varchar(255)
-)
+    password varchar(255),
+    userid INT UNIQUE
+);
 
 
 CREATE USER 'guest'@'localhost' IDENTIFIED BY 'password';
