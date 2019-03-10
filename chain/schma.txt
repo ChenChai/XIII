@@ -1,0 +1,22 @@
+email
+	subject
+	message
+
+transaction
+	from
+	to
+	<email>
+	token update
+	prevheader
+
+header
+	nounce
+	hash
+	
+user
+# of email coin
+
+
+miner:
+
+push/pull from server
