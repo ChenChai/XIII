@@ -9,7 +9,7 @@ CREATE TABLE blocks (
 CREATE TABLE users (
     username varchar(255) UNIQUE,
     password varchar(255),
-    userid INT UNIQUE
+    userid INT UNIQUE AUTO_INCREMENT KEY
 );
 
 
