@@ -1,10 +1,18 @@
-﻿
-
-
-.grid {
+﻿.grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
+
+    border: 3px solid black;
+    margin: 5px;
+    box-shadow: 0 0 50px 10px rgba(0, 29, 255, 0.7);
+}
+
+.header {
+    background: rgb(50,50,50);
+    color: white;
+    grid-column: 1/3;
+    font-size: 130%;
 }
 
 .grid > div {
@@ -16,7 +24,7 @@
 
 .inbox {
     grid-column: 1/2;
-    grid-row: 1/3;
+    grid-row: 2/4;
 }
 
 .to {
@@ -31,5 +39,5 @@
     border: 2px solid black;
     border-radius: 10px;
     margin: 5px;
-    padding: 3px;
+    padding: 5px;
 }
