@@ -19,7 +19,6 @@
 
             <div class="inbox">Inbox:
 
-
                 <?php
                     foreach($emails["msg"] as $email) {
                         echo '<div class="message">';
