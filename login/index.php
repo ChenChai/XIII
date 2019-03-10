@@ -1,4 +1,14 @@
 <?php
+    function loginSession($username) { 
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_destroy();
+        }
+        session_start();
+        $_SESSION["username"] = $username;
+
+    }
+
+
     include '../database/connectdb.php';
     $username = $_POST["userName"];
     $password = $_POST["password"];
@@ -15,6 +25,7 @@
         // attempt to create new account
         if (true === $connection->query("INSERT INTO users (username, password) VALUES('$username', '$hashed')")) {
             echo "New Account Created. Welcome, ". $username;
+            loginSession($username);
         } else {
             echo "Account creation failed!";
         }
@@ -28,6 +39,7 @@
             if (password_verify($password, $row["password"])) {
                 // user's password correct!
                 echo "Your password is correct! Welcome, " . $username;
+                loginSession($username);
             } else {
                 echo "Password incorrect! Please go back and try again.";
             }
@@ -35,6 +47,3 @@
         break;
     }
 ?>
-<html>
-
-</html>
