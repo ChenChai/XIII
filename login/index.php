@@ -1,31 +1,49 @@
-<?php 
-    include '../database/connectdb.php'; 
+<?php
+    function loginSession($username) { 
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_destroy();
+        }
+        session_start();
+        $_SESSION["username"] = $username;
+
+    }
+
+
+    include '../database/connectdb.php';
     $username = $_POST["userName"];
     $password = $_POST["password"];
 
     $hashed = password_hash($password, PASSWORD_DEFAULT, array());
     $result = $connection->query("SELECT * FROM users WHERE username='$username'"); // get username
 
-    if (mysql_num_rows($result) === 0) { // user not found in database.
-        
-        if (true === $connection->query("INSERT INTO users (username, password) VALUES ('$username', '$hashed'")) {
+    if ($result === false) {
+	echo "Database Query Error: " . $mysqli->error;
+    }
+
+    if ($result->num_rows === 0) {
+        // user not found in database.
+        // attempt to create new account
+        if (true === $connection->query("INSERT INTO users (username, password) VALUES('$username', '$hashed')")) {
             echo "New Account Created. Welcome, ". $username;
+            loginSession($username);
         } else {
             echo "Account creation failed!";
         }
+    }
 
-    } else { // check if password good
-        if ($result["password"] === $hashed) {
-            // user's password correct!
-            echo "Welcomed, " . $username;
-        } else {
-            echo "Password incorrect!";
+    while ($row = $result->fetch_assoc()) { // returns first value in associative array, or false if empty
+
+        if ($row === false) { 
+
+        } else { // check if password good
+            if (password_verify($password, $row["password"])) {
+                // user's password correct!
+                echo "Your password is correct! Welcome, " . $username;
+                loginSession($username);
+            } else {
+                echo "Password incorrect! Please go back and try again.";
+            }
         }
+        break;
     }
 ?>
-<html>
-<br/><br/><br/>
-<?php echo $_POST["userName"]; ?>
-<br/> Your password was : <?php echo $_POST["password"]; ?>
-
-</html>
