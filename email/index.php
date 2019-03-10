@@ -2,7 +2,19 @@
 
 <?php
     include "../database/connectdb.php";
+
+    $username = $_POST["username"];
+    echo "Welcome, ". $username;
+
+    $result = $connection->query("SELECT * FROM users WHERE username='$username'");
+
     $userid = "1";
+
+    while($row = $result->fetch_assoc()) {
+        $userid = $row["userid"];
+    }
+
+    echo "Your UserID is : ". $userid;
     $connection->query("SELECT * FROM blocks");
 
     $emails = json_decode(exec("python ../chain/getmail.py $userid"), true);
@@ -28,7 +40,7 @@
                 ?>
 
             </div>
-           <div class="to">
+            <div class="to">
 				To: <input/>
 				<br/>Subject: <input/>
 			</div>
