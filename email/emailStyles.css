@@ -67,6 +67,7 @@ body {
 
 .message {
     grid-column: 2/3;
+    grid-row: 3/4;
     height: 500px;
     width: auto;
     border: 2px solid black;
@@ -77,14 +78,16 @@ body {
 }
 
 .send {
-grid-column: 2/3;
-width: 5em;
-font-size: 110%;
-justify-self: end;
-margin: 0 10px 10px 0;
+    grid-column: 2/3;
+    grid-row: 4/5;
+    width: 5em;
+    font-size: 110%;
+    justify-self: end;
+    margin: 0 10px 10px 0;
 }
 
 .X {
+    display: none;
     color: rgb(168, 26, 61);
     float: right;
     font-size: 30px;
