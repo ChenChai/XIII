@@ -2,5 +2,9 @@
     include "../database/connectdb.php";
     $id = "test";
     $block = "hi";
-    $connection->query("INSERT INTO blocks($id, $block)");
+    if (true === $connection->query("INSERT INTO blocks VALUES($id, $block)")) {
+        echo "Block created!";
+    } else {
+        echo "Failed to write block!";
+    }
 ?>
