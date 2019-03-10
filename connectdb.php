@@ -1,11 +1,11 @@
 
 <html>
 <head></head>
-ping
+ping <br/><br/>
 <?php
 
 
-$server = 'chench.ai';
+$server = 'localhost';
 $user = 'guest';
 $password = 'password';
 $db = 'users';
@@ -19,7 +19,7 @@ if ($connection->connect_error) {
 $result = $connection->query("SELECT * FROM test");
 
 while($row = $result->fetch_assoc()) {
-    echo 'name:' . $row['name'] . ' id: '. $row['id']. '<br/>';
+    echo 'name:' . $row['name'] . ' id: '. $row['number']. '<br/>';
 }
 
 ?>
