@@ -15,3 +15,6 @@ CREATE TABLE users (
 CREATE USER 'guest'@'localhost' IDENTIFIED BY 'password';
 GRANT SELECT ON emaildb.blocks TO 'guest'@'localhost';
 GRANT DELETE ON emaildb.blocks TO 'guest'@'localhost';
+
+GRANT SELECT ON emaildb.users TO 'guest'@'localhost';
+GRANT INSERT ON emaildb.users TO 'guest'@'localhost';
