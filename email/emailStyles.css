@@ -39,14 +39,25 @@ body {
     grid-row: 2/4;
 
     display: grid;
-    grid-template-rows: repeat(30px, 80px);
+    grid-template-rows: repeat(80px);
 }
 
 .inbox > div {
     border: 1px solid black;
-    height: 80px;
     border-radius: 0;
     width: 100%;
+}
+.inboxPopup {
+    display: none;
+
+    border: 3px solid black;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: rgb(153, 193, 233);
+    box-shadow: 0px 0px 100px 15px rgba(0, 29, 255, 0.7);
+    max-width: 1000px;
+    z-index: 1;
 }
 
 .to {
@@ -71,4 +82,18 @@ width: 5em;
 font-size: 110%;
 justify-self: end;
 margin: 0 10px 10px 0;
+}
+
+.X {
+    color: rgb(168, 26, 61);
+    float: right;
+    font-size: 30px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+.X:hover {
+    color: deeppink;
+    cursor: pointer;
 }

@@ -23,7 +23,6 @@
                     foreach($emails["msg"] as $email) {
                         echo '<div class="message">';
                         echo '<p class="subject">'.$email["sub"]."</p>";
-                        echo '<p class="messageText">'.$email["msg"]."</p>";
                         echo '</div>';
                     }
                 ?>
@@ -33,9 +32,19 @@
 				To: <input/>
 				<br/>Subject: <input/>
 			</div>
-
             <textarea class="message"></textarea>
             <button class="send">Send</button>
         </div>
+		<div class="inboxPopup">
+			<div class="X">X</div>
+			<?php
+                    foreach($emails["msg"] as $email) {
+                        echo '<div class="message">';
+                        echo '<p class="subject">'.$email["sub"]."</p>";
+                        echo '<p class="messageText">'.$email["msg"]."</p>";
+                        echo '</div>';
+                    }
+            ?>
+		</div>
     </body>
 </html>
