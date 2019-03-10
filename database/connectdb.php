@@ -1,6 +1,3 @@
-
-<html>
-<head></head>
 <?php
 // connects to server
 $server = 'localhost';
@@ -21,4 +18,3 @@ while($row = $result->fetch_assoc()) {
 }
 */
 ?>
-</html>
