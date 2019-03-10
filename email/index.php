@@ -7,12 +7,6 @@
 
     $emails = json_decode(exec("python ../chain/getmail.py $userid"), true);
     //var_dump($emails);
-
-    foreach($emails["msg"] as $email) {
-        echo "Subject: ".$email["sub"]."<br/>";
-        echo "Message: ".$email["msg"]."<br/>";
-        echo "<br/>";
-    }
 ?>
 
 <head>
@@ -22,11 +16,25 @@
     <body>
         <div class="grid">
             <div class="header">Your Email</div>
-            <div class="inbox">Inbox:</div>
-            <div class="to">
+
+            <div class="inbox">Inbox:
+
+
+                <?php
+                    foreach($emails["msg"] as $email) {
+                        echo '<div class="message">';
+                        echo '<p class="subject">'.$email["sub"]."</p>";
+                        echo '<p class="messageText">'.$email["msg"]."</p>";
+                        echo '</div>';
+                    }
+                ?>
+
+            </div>
+           <div class="to">
 				To: <input/>
 				<br/>Subject: <input/>
 			</div>
+
             <textarea class="message"></textarea>
             <button class="send">Send</button>
         </div>
