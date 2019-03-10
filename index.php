@@ -4,6 +4,7 @@
 <head>
     <title>DATING LOGIN</title>
     <script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css"
 </head>
 
 <body>
