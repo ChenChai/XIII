@@ -1,6 +1,6 @@
 from classes import *
 
-from memblock import *
+from netblock import *
 default={
 	"last":Header(0,"",""),
 	"user":{},
