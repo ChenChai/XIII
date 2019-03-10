@@ -1,5 +1,5 @@
 <?php 
-    include 'connectdb.php'; 
+    include '../database/connectdb.php'; 
     $username = $_POST["userName"];
     $password = $_POST["password"];
 
