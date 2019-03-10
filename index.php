@@ -17,7 +17,6 @@
                 UserName: <br /><input type="text" name="userName" id="userName" /><br /><br />
                 Password: <br /><input type="text" name="password" id="password" /><br /><br />
                 <input type="submit" id="enter" value="Submit" />
-
             </form>
 
             <div class="footer"><br />Created by Edwin, Joshua and Chen.</div>

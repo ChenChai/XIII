@@ -40,12 +40,14 @@
                 ?>
 
             </div>
+            <form action="confirmsent.php" method="post">
             <div class="to">
-				To: <input/>
-				<br/>Subject: <input/>
+				To: <input type="text" name="userid"/>
+				<br/>Subject: <input type="text" name="subject"/>
 			</div>
-            <textarea class="message"></textarea>
-            <button class="send">Send</button>
+            <input type="text" name="message" class="message">
+            <input type="submit" class="send" value="Send"/>
+            </form>
         </div>
 		<div class="inboxPopup">
 			<div class="X">X</div>
