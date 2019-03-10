@@ -5,21 +5,21 @@ ping
 <?php
 
 
-$server = 'localhost';
-$user = 'root';
-$password = 'Terrible.hack';
+$server = 'chench.ai';
+$user = 'guest';
+$password = 'password';
 $db = 'users';
 
 $connection = new mysqli($server, $user, $password, $db);
 
-or die ("Failed to connect to server! \n") . mysql_error());
-mysql_select_db($db);
-or die ("Failed to connect to server! \n") . mysql_error());
+if ($connection->connect_error) {
+    die("Connection blew up! " . $connection->connect_error);
+}
 
-$result = mysql_query("SELECT * FROM test");
+$result = $connection->query("SELECT * FROM test");
 
-foreach (mysql_fetch_array($result) as $row) {
-    echo $row['name'] . '<br/>';
+while($row = $result->fetch_assoc()) {
+    echo 'name:' . $row['name'] . ' id: '. $row['id']. '<br/>';
 }
 
 ?>
