@@ -5,9 +5,7 @@
         }
         session_start();
         $_SESSION["username"] = $username;
-
     }
-
 
     include '../database/connectdb.php';
     $username = $_POST["userName"];
