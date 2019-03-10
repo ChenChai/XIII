@@ -44,8 +44,9 @@
             <div class="to">
 				To: <input type="text" name="userid"/>
 				<br/>Subject: <input type="text" name="subject"/>
-			</div>
-            <input type="text" name="message" class="message">
+            </div>
+            <input type="hiddent" name="senderid" value=<?php echo '"'.$userid.'"'; ?> />
+            <input type="text" name="message" class="message"/>
             <input type="submit" class="send" value="Send"/>
             </form>
         </div>
