@@ -7,7 +7,7 @@
 
     $emails = json_decode(exec("python ../chain/getmail.py $userid"), true);
     //var_dump($emails);
-    echo "Welcome, ".$_POST["username"];
+    echo "Welcome, ". $_POST["username"];
 ?>
 
 <head>

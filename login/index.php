@@ -1,11 +1,10 @@
 <?php
     function loginSession($username) { 
-        if (session_status() === PHP_SESSION_ACTIVE) {
-            session_destroy();
-        }
-        session_start();
-        $_SESSION["username"] = $username;
-        loggedIn = true;
+        $loggedIn = true;
+        echo "LOGGED IN!";
+        echo '<form id="myForm" action="../email/index.php" method="post">';
+        echo '<input type="text" name="username" value="'.$username.'"/>';
+        echo '</form>';
     }
 
     include '../database/connectdb.php';
@@ -48,13 +47,6 @@
     }
 ?>
 
-<?php
-    if ($loggedIn === true) {
-        echo '<form id="myForm" action="../email" method="post">';
-        echo '<input type="hidden" name="username" value="'.$username.'">';
-        echo '</form>';
-    }
-?>
 <script type="text/javascript">
     document.getElementById("myForm").submit();
 </script>
