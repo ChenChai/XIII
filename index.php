@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
-    if (session_status() === PHP_SESSION_ACTIVE) {
-        echo "No need to login. Welcome," . $_SESSION["username"];
-    }
-?>
-
-
 <head>
     <title>LOGIN</title>
     <script src="script.js"></script>

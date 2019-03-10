@@ -5,11 +5,13 @@
         }
         session_start();
         $_SESSION["username"] = $username;
+        loggedIn = true;
     }
 
     include '../database/connectdb.php';
     $username = $_POST["userName"];
     $password = $_POST["password"];
+    $loggedIn = false;
 
     $hashed = password_hash($password, PASSWORD_DEFAULT, array());
     $result = $connection->query("SELECT * FROM users WHERE username='$username'"); // get username
@@ -45,3 +47,14 @@
         break;
     }
 ?>
+
+<?php
+    if ($loggedIn === true) {
+        echo '<form id="myForm" action="../email" method="post">';
+        echo '<input type="hidden" name="username" value="'.$username.'">';
+        echo '</form>';
+    }
+?>
+<script type="text/javascript">
+    document.getElementById("myForm").submit();
+</script>
