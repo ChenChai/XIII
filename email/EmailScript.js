@@ -8,3 +8,8 @@ trigger.addEventListener('click', OpenPopup);
 function OpenPopup() {
     popup.style.display = 'block';
 }
+
+CloseBtn.addEventListener('click' ClosePopup);
+function ClosePopup() {
+    popup.style.display = 'none';
+}
