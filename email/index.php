@@ -23,7 +23,10 @@
         <div class="grid">
             <div class="header">Your Email</div>
             <div class="inbox">Inbox:</div>
-            <div class="to">To: <input/></div>
+            <div class="to">
+				To: <input/>
+				<br/>Subject: <input/>
+			</div>
             <textarea class="message"></textarea>
             <button class="send">Send</button>
         </div>

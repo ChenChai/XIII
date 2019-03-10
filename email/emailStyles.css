@@ -37,6 +37,13 @@ body {
     background: white;
     grid-column: 1/2;
     grid-row: 2/4;
+
+    display: grid;
+}
+
+.inbox > div {
+    border: 1px solid black;
+    height: 80px;
 }
 
 .to {
